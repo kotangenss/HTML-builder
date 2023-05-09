@@ -39,8 +39,7 @@ fs.mkdir(projectDistPath, { recursive: true }, err => {
           let directoryPath = path.join(__dirname, `project-dist/assets/${directory.name}`);
           let pathFromDirectory = path.join(__dirname, `assets/${directory.name}`);
 
-          fs.rmdir(directoryPath, { recursive: true }, (err) => {
-            if (err) throw err;
+          fs.rm(directoryPath, { recursive: true }, (err) => {
 
             fs.mkdir(directoryPath, { recursive: true }, err => {
               if (err) throw err;

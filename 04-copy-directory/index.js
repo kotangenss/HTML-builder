@@ -5,8 +5,7 @@ const promises = require('fs/promises');
 const filesPath = path.join(__dirname, 'files');
 const filesCopyPath = path.join(__dirname, 'files-copy');
 
-fs.rmdir(filesCopyPath, { recursive: true }, (err) => {
-  if (err) throw err;
+fs.rm(filesCopyPath, { recursive: true }, (err) => {
 
   fs.mkdir(filesCopyPath, { recursive: true }, err => {
     if (err) throw err;
